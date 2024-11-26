@@ -5,7 +5,7 @@ steps:
       - 'deploy'
       - 'cf-test-cloudbuild'
       - '--source=.'
-      - '--runtime=nodejs20'  # Specify the runtime (e.g., 'python39' for Python 3.9)
+      - '--runtime=python38'  # Specify the runtime (e.g., 'python39' for Python 3.9)
       - '--trigger-http'      # Specify the trigger type (e.g., HTTP trigger)
       - '--allow-unauthenticated'  # Optional: Allow unauthenticated access (can be removed if not needed)
 
