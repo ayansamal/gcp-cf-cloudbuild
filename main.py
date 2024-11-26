@@ -1,12 +1,7 @@
 import os
-from flask import Flask
+from datetime import datetime
+import mysql.connector
 
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 8080))  # Listen on 8080 by default
-    app.run(host='0.0.0.0', port=port)
+def return_basic(request):
+  now = datetime.now()
+  return '<h1>Welcome to Cloud Functions and Cloud Build demo</h1><br/>' + str(now)
