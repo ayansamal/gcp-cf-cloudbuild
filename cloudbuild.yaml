@@ -1,5 +1,13 @@
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions', 'deploy', 'cf-test-cloudbuild', '--source=.']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'functions'
+      - 'deploy'
+      - 'cf-test-cloudbuild'
+      - '--source=.'
+      - '--runtime=nodejs20'  # Specify the runtime (e.g., 'python39' for Python 3.9)
+      - '--trigger-http'      # Specify the trigger type (e.g., HTTP trigger)
+      - '--allow-unauthenticated'  # Optional: Allow unauthenticated access (can be removed if not needed)
+
 options:
-  logging: 'CLOUD_LOGGING_ONLY'
+  logging: 'CLOUD_LOGGING_ONLY'  # Use Cloud Logging for the build logs
