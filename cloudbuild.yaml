@@ -3,7 +3,7 @@ steps:
     args:
       - 'functions'
       - 'deploy'
-      - 'python-http-function'
+      - 'application-login'
       - '--source=.'
       - '--runtime=python312'  # Specify the runtime (e.g., 'python39' for Python 3.9)
       - '--trigger-http'      # Specify the trigger type (e.g., HTTP trigger)
