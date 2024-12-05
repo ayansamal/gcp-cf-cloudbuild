@@ -1,3 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['functions', 'deploy', 'userlogin', '--source=.']
+options:
+  logging: 'CLOUD_LOGGING_ONLY'  # Use Cloud Logging for the build logs  
