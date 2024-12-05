@@ -9,6 +9,7 @@ steps:
       - '--trigger-http'      # Specify the trigger type (e.g., HTTP trigger)
       - '--allow-unauthenticated'  # Optional: Allow unauthenticated access (can be removed if not needed)
       - '--timeout=1500s'
+      - '--entry-point=return_basic'
 
 options:
   logging: 'CLOUD_LOGGING_ONLY'  # Use Cloud Logging for the build logs
