@@ -1,15 +1,3 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args:
-      - 'functions'
-      - 'deploy'
-      - 'application-login'
-      - '--source=.'
-      - '--runtime=python312'  # Specify the runtime (e.g., 'python39' for Python 3.9)
-      - '--trigger-http'      # Specify the trigger type (e.g., HTTP trigger)
-      - '--allow-unauthenticated'  # Optional: Allow unauthenticated access (can be removed if not needed)
-      - '--timeout=1500s'
-      - '--entry-point=return_basic'
-
-options:
-  logging: 'CLOUD_LOGGING_ONLY'  # Use Cloud Logging for the build logs
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['functions', 'deploy', 'userlogin', '--source=.']
